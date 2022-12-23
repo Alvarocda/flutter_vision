@@ -130,8 +130,9 @@ public class yolov5 {
         }catch (Exception e){
             return  responses.error("Cannot initialize yolo model: "+e.getMessage());
         }finally {
-            if (asset_manager!=null)
-                asset_manager.close();
+            // https://stackoverflow.com/a/22551945/12121064
+//            if (asset_manager!=null)
+//                asset_manager.close();
             if (buffer!=null)
                 buffer.clear();
             if (file_channel!=null)
